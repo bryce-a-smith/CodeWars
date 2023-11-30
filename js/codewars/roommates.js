@@ -1,11 +1,11 @@
 // function roomMates( rooms, floor ){
-
+  
 //   let occupants = [];
-
+  
 //   if(rooms.length == 0) {
 //     return occupants;
 //   }
-
+  
 //   //Check if floor 1.
 //   if(floor ==  1) {
 //     //Loop through rooms and determine if occupied.
@@ -26,24 +26,33 @@
 // //       }
 //     }
 //   }
-
+  
 //   return occupants;
 // }
 
 function roomMates(rooms, floor) {
-  let occupants = [];
-
-  if (rooms.length == 0) {
-    return occupants;
-  }
-
-  if (floor == 1) {
-    occupants = rooms.slice(0, 6).filter((room) => room != "");
-  }
-
-  if (floor == 2) {
-    occupants = rooms.slice(6).filter((room) => room != "");
-  }
-
-  return occupants;
-}
+  
+    
+    let occupants = [];
+    
+    //Check case of empty array.
+    if(rooms.length == 0) {
+      return occupants;
+    }
+    
+    //Check if floor 1
+      if(floor == 1) {
+        //Filter through first 6 elements, for occupied rooms (non-empty names)
+          occupants = rooms.slice(0, 6).filter((room) => room != "");
+      }
+  
+    //Check if floor 2
+      if(floor == 2) {
+           //Filter through starting with 6th element, for occupied rooms (non-empty names)
+          occupants = rooms.slice(6).filter((room) => room != "");
+      }
+  
+      return occupants;
+    }
+    
+  
